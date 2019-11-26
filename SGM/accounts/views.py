@@ -1,6 +1,6 @@
 from django.views import View
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import SignupForm
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
@@ -40,7 +40,9 @@ class Signup(View):
             email = EmailMessage(mail_subject, message, to=[to_email])
             email.send()
             return HttpResponse('Please confirm your email address to complete the registration. An email has been sent to you.')
-      
+       
+        else:
+            pass
       
       
        
