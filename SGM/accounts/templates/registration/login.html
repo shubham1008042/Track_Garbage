@@ -1,5 +1,7 @@
-{% extends "base.html" %}
-{% block title %}Login{% endblock %}
+{% include 'base.html' %}
+{% load staticfiles %}
+
+<!-- {% block title %}Login{% endblock %} -->
 {% block content %}
 
 {% if form.errors %}
@@ -15,23 +17,8 @@
     {% endif %}
 {% endif %}
 
-<!-- <form method="post" action="{% url 'login' %}">
-{% csrf_token %}
-<table>
-<tr>
-    <td>{{ form.username.label_tag }}</td>
-    <td>{{ form.username }}</td>
-</tr>
-<tr>
-    <td>{{ form.password.label_tag }}</td>
-    <td>{{ form.password }}</td>
-</tr>
-</table>
 
-<input type="submit" value="login">
-<input type="hidden" name="next" value="{{ next }}">
-</form> -->
-
+<!-- 
 <div id="logreg-forms">
         <form class="form-signin" method="post" action="{% url 'login' %}">
                 {% csrf_token %}
@@ -41,14 +28,14 @@
                 <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign in with Facebook</span> </button>
                 <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign in with Google+</span> </button>
             </div>
-            <p style="text-align:center"> OR  </p> -->
+            <p style="text-align:center"> OR  </p> 
             <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
             <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
             
             <button class="btn btn-success btn-block" type="submit" value="login"><i class="fas fa-sign-in-alt"></i> Sign in</button>
             <a href="#" id="forgot_pswd">Forgot password?</a>
             <hr>
-            <!-- <p>Don't have an account!</p>  -->
+            <!-- <p>Don't have an account!</p>  
             <button class="btn btn-primary btn-block" type="button" id="btn-signup"><i class="fas fa-user-plus"></i> Register</button>
             </form>
 
@@ -58,52 +45,66 @@
                 <a href="#" id="cancel_reset"><i class="fas fa-angle-left"></i> Back</a>
             </form>
             
-            <form action="{% url 'signup' %}" method="post" class="form-signup">
-
-                    {% csrf_token %}
-                <!-- <div class="social-login">
-                    <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign up with Facebook</span> </button>
-                </div>
-                <div class="social-login">
-                    <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign up with Google+</span> </button>
-                </div>
-                
-                <p style="text-align:center">OR</p> -->
-
-                <input type="text" id="user-name" class="form-control" placeholder="First Name" required="" autofocus="">
-                <input type="text" id="user-name" class="form-control" placeholder="Last Name" required="" autofocus="">
-                <input type="email" id="user-email" class="form-control" placeholder="Email address" required autofocus="">
-                <input type="password" id="user-pass" class="form-control" placeholder="Password" required autofocus="">
-                <input type="password" id="user-repeatpass" class="form-control" placeholder="Repeat Password" required autofocus="">
-
-                <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-user-plus"></i> Sign Up</button>
-                <a href="#" id="cancel_signup"><i class="fas fa-angle-left"></i> Back</a>
-            </form>
+          
             <br>
             
-    </div>
-    <!-- <p style="text-align:center">
-            <a href="http://bit.ly/2RjWFMfunction toggleResetPswd(e){
-        e.preventDefault();
-        $('#logreg-forms .form-signin').toggle() // display:block or none
-        $('#logreg-forms .form-reset').toggle() // display:block or none
-    }
-    
-    function toggleSignUp(e){
-        e.preventDefault();
-        $('#logreg-forms .form-signin').toggle(); // display:block or none
-        $('#logreg-forms .form-signup').toggle(); // display:block or none
-    }
-    
-    $(()=>{
-        // Login Register Form
-        $('#logreg-forms #forgot_pswd').click(toggleResetPswd);
-        $('#logreg-forms #cancel_reset').click(toggleResetPswd);
-        $('#logreg-forms #btn-signup').click(toggleSignUp);
-        $('#logreg-forms #cancel_signup').click(toggleSignUp);
-    })g" target="_blank" style="color:black"></a>
-        </p> -->
-<!-- <p><a href="{% url 'password_reset' %}">Lost password?</a></p> -->
+    </div> -->
+
+
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
+                    <form class="form-signin" method="post" action="{% url 'login' %}">
+
+				<!-- <form class="login100-form validate-form"> -->
+					<span class="login100-form-title p-b-33">
+						Account Login
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="text" name="email" placeholder="Email">
+						<span class="focus-input100-1"></span>
+						<span class="focus-input100-2"></span>
+					</div>
+
+					<div class="wrap-input100 rs1 validate-input" data-validate="Password is required">
+						<input class="input100" type="password" name="pass" placeholder="Password">
+						<span class="focus-input100-1"></span>
+						<span class="focus-input100-2"></span>
+					</div>
+
+					<div class="container-login100-form-btn m-t-20">
+						<button class="login100-form-btn">
+							Sign in
+						</button>
+					</div>
+
+					<div class="text-center p-t-45 p-b-4">
+						<span class="txt1">
+							Forgot
+						</span>
+
+						<a href="#" class="txt2 hov1">
+							Username / Password?
+						</a>
+					</div>
+
+					<div class="text-center">
+						<span class="txt1">
+							Create an account?
+						</span>
+
+						<a href="#" class="txt2 hov1">
+							Sign up
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
 
 {% endblock %}
 

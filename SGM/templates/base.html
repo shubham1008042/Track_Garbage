@@ -1,0 +1,102 @@
+<html>
+  {% load staticfiles %}
+<head>
+<title>SGM</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0 user-scalable=no">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href='{% static "assets/css/base.css" %} '>  
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+<link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+<link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+<link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+<link href="css/main.css" rel="stylesheet" media="all">
+
+
+<link rel="icon" type="image/png" href= '{% static "assets/images/icons/favicon.ico" %}' >
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href= '{% static "assets/vendor/bootstrap/css/bootstrap.min.css" %}' >
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href= '{% static "assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css" %}' >
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href= '{% static "assets/fonts/Linearicons-Free-v1.0.0/icon-font.min.css" %}' >
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href= '{% static "assets/vendor/animate/animate.css" %}' >
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href= '{% static "assets/vendor/css-hamburgers/hamburgers.min.css" %}' >
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href= '{% static "assets/vendor/animsition/css/animsition.min.css" %}' >
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href= '{% static "assets/vendor/select2/select2.min.css" %}' >
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href= '{% static "assets/vendor/daterangepicker/daterangepicker.css" %}' >
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href= '{% static "assets/css/util.css" %}' >
+	<link rel="stylesheet" type="text/css" href= '{% static "assets/css/main.css" %}' >
+
+
+<style>
+body {
+  background-image: url("static/assets/images/nature.jpg");
+ }
+</style>
+
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+              <a href="{% url 'signup' %}" class="nav-link" title="Register">Register</a></li>
+            </li>
+          <li class="nav-item ">
+              <a href="{% url 'login' %}" class="nav-link" title="Login">Login</a></li>
+            </li>
+          
+          <li class="nav-item active">
+              <a href="" class="nav-link" title="About">About</a></li>
+            </li>
+        </ul>
+       
+      </div>
+    </nav>
+
+
+
+    	
+<!--===============================================================================================-->
+	<script src= '{% static "assets/vendor/jquery/jquery-3.2.1.min.js" %}' ></script>
+  <!--===============================================================================================-->
+    <script src= '{% static "assets/vendor/animsition/js/animsition.min.js" %}' ></script>
+  <!--===============================================================================================-->
+    <script src= '{% static "assets/vendor/bootstrap/js/popper.js" %}' ></script>
+    <script src= '{% static "assets/vendor/bootstrap/js/bootstrap.min.js" %}' ></script>
+  <!--===============================================================================================-->
+    <script src= '{% static "assets/vendor/select2/select2.min.js" %}' ></script>
+  <!--===============================================================================================-->
+    <script src= '{% static "assets/vendor/daterangepicker/moment.min.js" %}' ></script>
+    <script src= '{% static "assets/vendor/daterangepicker/daterangepicker.js" %}' ></script>
+  <!--===============================================================================================-->
+    <script src= '{% static "assets/vendor/countdowntime/countdowntime.js" %}' ></script>
+  <!--===============================================================================================-->
+    <script src= '{% static "assets/js/main.js" %}'></script>
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src='{% static "assets/js/jquery.min.js" %}'></script>
+    <script src='{% static "assets/js/jquery.validate.min.js" %}'></script>
+    <script src='{% static "assets/js/additional-methods.min.js" %}'></script>
+    <script src='{% static "assets/js/bootstrap.min.js" %}'></script>
+    <script src='{% static "assets/js/jquery.mask.js" %}'></script>
+    <script src='{% static "assets/js/custom_validation_method.js" %}'></script>
+
+</body>
+</html>

@@ -1,108 +1,70 @@
-$(document).ready(function() {
-    $('#contact_form').bootstrapValidator({
-        // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
-        feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: {
-            first_name: {
-                validators: {
-                        stringLength: {
-                        min: 2,
-                    },
-                        notEmpty: {
-                        message: 'Please enter your First Name'
-                    }
-                }
+(function ($) {
+    'use strict';
+    /*==================================================================
+        [ Daterangepicker ]*/
+    try {
+        $('.js-datepicker').daterangepicker({
+            "singleDatePicker": true,
+            "showDropdowns": true,
+            "autoUpdateInput": false,
+            locale: {
+                format: 'DD/MM/YYYY'
             },
-             last_name: {
-                validators: {
-                     stringLength: {
-                        min: 2,
-                    },
-                    notEmpty: {
-                        message: 'Please enter your Last Name'
-                    }
-                }
-            },
-			 user_name: {
-                validators: {
-                     stringLength: {
-                        min: 8,
-                    },
-                    notEmpty: {
-                        message: 'Please enter your Username'
-                    }
-                }
-            },
-			 user_password: {
-                validators: {
-                     stringLength: {
-                        min: 8,
-                    },
-                    notEmpty: {
-                        message: 'Please enter your Password'
-                    }
-                }
-            },
-			confirm_password: {
-                validators: {
-                     stringLength: {
-                        min: 8,
-                    },
-                    notEmpty: {
-                        message: 'Please confirm your Password'
-                    }
-                }
-            },
-            email: {
-                validators: {
-                    notEmpty: {
-                        message: 'Please enter your Email Address'
-                    },
-                    emailAddress: {
-                        message: 'Please enter a valid Email Address'
-                    }
-                }
-            },
-            contact_no: {
-                validators: {
-                  stringLength: {
-                        min: 12, 
-                        max: 12,
-                    notEmpty: {
-                        message: 'Please enter your Contact No.'
-                     }
-                }
-            },
-			 department: {
-                validators: {
-                    notEmpty: {
-                        message: 'Please select your Department/Office'
-                    }
-                }
-            },
-                }
-            }
-        })
-        .on('success.form.bv', function(e) {
-            $('#success_message').slideDown({ opacity: "show" }, "slow") // Do something ...
-                $('#contact_form').data('bootstrapValidator').resetForm();
-
-            // Prevent form submission
-            e.preventDefault();
-
-            // Get the form instance
-            var $form = $(e.target);
-
-            // Get the BootstrapValidator instance
-            var bv = $form.data('bootstrapValidator');
-
-            // Use Ajax to submit form data
-            $.post($form.attr('action'), $form.serialize(), function(result) {
-                console.log(result);
-            }, 'json');
         });
-});
+    
+        var myCalendar = $('.js-datepicker');
+        var isClick = 0;
+    
+        $(window).on('click',function(){
+            isClick = 0;
+        });
+    
+        $(myCalendar).on('apply.daterangepicker',function(ev, picker){
+            isClick = 0;
+            $(this).val(picker.startDate.format('DD/MM/YYYY'));
+    
+        });
+    
+        $('.js-btn-calendar').on('click',function(e){
+            e.stopPropagation();
+    
+            if(isClick === 1) isClick = 0;
+            else if(isClick === 0) isClick = 1;
+    
+            if (isClick === 1) {
+                myCalendar.focus();
+            }
+        });
+    
+        $(myCalendar).on('click',function(e){
+            e.stopPropagation();
+            isClick = 1;
+        });
+    
+        $('.daterangepicker').on('click',function(e){
+            e.stopPropagation();
+        });
+    
+    
+    } catch(er) {console.log(er);}
+    /*[ Select 2 Config ]
+        ===========================================================*/
+    
+    try {
+        var selectSimple = $('.js-select-simple');
+    
+        selectSimple.each(function () {
+            var that = $(this);
+            var selectBox = that.find('select');
+            var selectDropdown = that.find('.select-dropdown');
+            selectBox.select2({
+                dropdownParent: selectDropdown
+            });
+        });
+    
+    } catch (err) {
+        console.log(err);
+    }
+    
+
+})(jQuery);
